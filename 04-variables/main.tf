@@ -18,7 +18,7 @@ variable "plain_variable" {
 }
 #2.list Variables ## each value can different data type
 variable "list_variable" {
-  default = [Hello, 2, false  ]
+  default = ["Hello", 2, false  ]
 }
 #3map variable
 variable "map_variable" {
