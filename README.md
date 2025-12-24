@@ -1,2 +1,2 @@
 # learn-terraform
-We are learn-terraform from scratch 
+We are learn-terraform from scratch to learn 
