@@ -1,25 +1,3 @@
-terraform {
-  required_providers {
-    azurerm = {
-      source  = "hashicorp/azurerm"
-      version = "4.49.0"
-    }
-  }
-}
-provider "azurerm" {
-  features {}
-  subscription_id = "af504235-2f6d-4469-aa25-251f498730fc"
-}
-
-data "azurerm_resource_group" "example" {
-  name = "eCommerce"
-}
-data "azurerm_subnet" "example" {
-  name                 = "default"
-  resource_group_name  = data.azurerm_resource_group.example.name
-  virtual_network_name = "vNET-eCommerce"
-}
-
 resource "azurerm_network_interface" "example" {
   name = "test-nic"
   location = data.azurerm_resource_group.example.location
