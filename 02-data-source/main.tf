@@ -6,6 +6,10 @@ terraform {
     }
   }
 }
+provider "azurerm" {
+  features {}
+}
+
 data "azurerm_resource_group" "example" {
   name = "eCommerce"
 }
