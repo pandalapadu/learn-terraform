@@ -35,7 +35,7 @@ output "output_2" {
   value = var.plain_variable
 }
 output "output_3" {
-  value = var.list_variable[0]
+  value = var.list_variable[1]
 }
 output "output_4" {
   value = var.map_variable
