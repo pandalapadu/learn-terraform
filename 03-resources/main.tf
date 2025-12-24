@@ -6,6 +6,11 @@ terraform {
     }
   }
 }
+provider "azurerm" {
+  features {}
+  subscription_id = "af504235-2f6d-4469-aa25-251f498730fc"
+}
+
 data "azurerm_resource_group" "example" {
   name = "eCommerce"
 }
