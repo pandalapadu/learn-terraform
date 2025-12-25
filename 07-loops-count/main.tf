@@ -13,7 +13,7 @@ provider "azurerm" {
 resource "null_resource" "demo" {
   count = length(var.demo)
 }
-resource "null_resource" "demo" {
+variable "demo" {
   default = [
     "apple",
     "banan"
