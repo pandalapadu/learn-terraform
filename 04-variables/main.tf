@@ -40,3 +40,8 @@ output "output_3" {
 output "output_4" {
   value = var.map_variable
 }
+##so far we have hard coded all the variables
+variable "v10" {}
+output "o10" {
+  value = var.v10
+}
