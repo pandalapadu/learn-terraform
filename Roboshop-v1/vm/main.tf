@@ -10,6 +10,29 @@ resource "azurerm_network_interface" "main" {
     public_ip_address_id = azurerm_public_ip.main.id
   }
 }
+resource "azurerm_network_security_group" "main" {
+  name                = "${var.component}-nsg"
+  location            = data.azurerm_resource_group.example.location
+  resource_group_name = data.azurerm_resource_group.example.name
+
+  security_rule {
+    name                       = "Allow-all"
+    priority                   = 100
+    direction                  = "Inbound"
+    access                     = "Allow"
+    protocol                   = "Tcp"
+    source_port_range          = "*"
+    destination_port_range     = "*"
+    source_address_prefix      = "*"
+    destination_address_prefix = "*"
+  }
+
+}
+resource "azurerm_network_interface_security_group_association" "main" {
+  network_interface_id      = azurerm_network_interface.main.id
+  network_security_group_id = azurerm_network_security_group.main.id
+}
+
 resource "azurerm_public_ip" "main" {
   name = "${var.component}-pip"
   location = data.azurerm_resource_group.example.location
@@ -54,4 +77,23 @@ resource "azurerm_virtual_machine" "main" {
   tags = {
     component = var.component
   }
+
+  provisioner "remote-exec" {
+    inline = [
+      # Install Git
+      "sudo dnf install -y git",
+      ## Install Terraform via direct RPM
+      "sudo dnf install -y https://rpm.releases.hashicorp.com/RHEL/9/x86_64/stable/terraform-1.8.5-1.x86_64.rpm",
+      # Install Azure CLI
+      "sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc && sudo dnf install -y https://packages.microsoft.com/config/rhel/9.0/packages-microsoft-prod.rpm && sudo dnf install -y azure-cli"
+    ]
+
+    connection {
+      type        = "ssh"
+      user        = "azureuser"
+      password    = "azureuser@123"
+      host        = azurerm_public_ip.main.ip_address
+    }
+  }
 }
+
