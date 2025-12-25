@@ -63,5 +63,5 @@ data "azurerm_shared_image_version" "sig_image" {
 }
 
 output "id" {
-  value = data.azurerm_shared_image_version
+  value = data.azurerm_shared_image_version.sig_image.id
 }
