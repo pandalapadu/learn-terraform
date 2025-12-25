@@ -77,7 +77,7 @@ resource "azurerm_virtual_machine" "main" {
   tags = {
     component = var.component
   }
-
+###########To Connect Remote server we will use remote exec
   provisioner "remote-exec" {
     inline = [
       # Install Git
@@ -95,5 +95,14 @@ resource "azurerm_virtual_machine" "main" {
       host        = azurerm_public_ip.main.ip_address
     }
   }
+}
+
+##For Create an A record in DNS server
+resource "azurerm_dns_a_record" "main" {
+  name                = "${var.component}-dev"                       # subdomain (www.example.com)
+  zone_name           = "azdevopsvenkat.site"
+  resource_group_name = data.azurerm_resource_group.example.name
+  ttl                 = 10                          # time-to-live in seconds
+  records             = [azurerm_network_interface.main.private_ip_address]             # IP address of your VM or service
 }
 
