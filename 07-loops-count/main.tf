@@ -4,6 +4,10 @@ terraform {
       source  = "hashicorp/null"
       version = "3.2.4"
     }
+    local = {
+      source  = "hashicorp/local"
+      version = "2.5.3"
+    }
   }
 }
 provider "azurerm" {
@@ -15,6 +19,11 @@ resource "null_resource" "demo" {
   provisioner "local-exec" {
     command = "echo ${var.demo[count.index]}"
   }
+}
+resource "local_file" "testing" {
+  count = length(var.demo)
+  content = var.demo[count.index]
+  filename = "/tmp/file-${count.index}"
 }
 variable "demo" {
   default = [
