@@ -32,9 +32,11 @@ resource "azurerm_virtual_machine" "main" {
   # delete_data_disks_on_termination = true
 
   storage_image_reference {
-    id = "/subscriptions/7b6c642c-6e46-418f-b715-e01b2f871413/resourceGroups/trail1/providers/Microsoft.Compute/galleries/LDOTrail/images/rhel9-devops-practice/versions/04.12.2024"
+    publisher = "RedHat"
+    offer     = "RHEL"
+    sku       = "94_gen2"
+    version   = "9.4.2025040316" #exact version from az vm show
   }
-
   storage_os_disk {
     name              = var.component
     caching           = "ReadWrite"
