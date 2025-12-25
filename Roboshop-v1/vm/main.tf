@@ -32,11 +32,9 @@ resource "azurerm_virtual_machine" "main" {
   # delete_data_disks_on_termination = true
 
   storage_image_reference {
-    publisher = "Canonical"
-    offer     = "0001-com-ubuntu-server-jammy"
-    sku       = "22_04-lts"
-    version   = "latest"
+    community_gallery_image_id = "/CommunityGalleries/LDOTrail-a8215d2e-c9a8-43ef-904d-c8b1ffb29cf7/Images/rhel9-devops-practice/Versions/latest"
   }
+
   storage_os_disk {
     name              = var.component
     caching           = "ReadWrite"
