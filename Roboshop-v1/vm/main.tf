@@ -44,7 +44,7 @@ resource "azurerm_virtual_machine" "main" {
     managed_disk_type = "Standard_LRS"
   }
   os_profile {
-    computer_name  = "${var.component}"
+    computer_name  = var.component
     admin_username = "azureuser"
     admin_password = "azureuser@123"
   }
@@ -52,6 +52,6 @@ resource "azurerm_virtual_machine" "main" {
     disable_password_authentication = false
   }
   tags = {
-    component = "${var.component}"
+    component = var.component
   }
 }
