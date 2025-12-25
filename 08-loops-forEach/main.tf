@@ -7,6 +7,7 @@ resource "local_file" "foo" {
 variable "demo" {
   type = map(string)
   default = {
+    Apple = "apple"
     ORANGE = "orange",
     BANANA = "banana"
 
