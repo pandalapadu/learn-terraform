@@ -32,9 +32,11 @@ resource "azurerm_virtual_machine" "main" {
   # delete_data_disks_on_termination = true
 
   storage_image_reference {
-    community_gallery_image_id = "/CommunityGalleries/LDOTrail-a8215d2e-c9a8-43ef-904d-c8b1ffb29cf7/Images/rhel9-devops-practice/Versions/latest"
+    publisher = "Canonical"
+    offer     = "0001-com-ubuntu-server-jammy"
+    sku       = "22_04-lts"
+    version   = "latest"
   }
-
   storage_os_disk {
     name              = var.component
     caching           = "ReadWrite"
@@ -52,4 +54,14 @@ resource "azurerm_virtual_machine" "main" {
   tags = {
     component = var.component
   }
+}
+data "azurerm_shared_image_version" "sig_image" {
+  name                = "04.12.2024"
+  image_name          = "rhel9-devops-practice"
+  gallery_name        = "LDOTrail"
+  resource_group_name = "trail1"
+}
+
+output "id" {
+  value = data.azurerm_shared_image_version
 }
