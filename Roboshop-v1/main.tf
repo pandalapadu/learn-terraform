@@ -8,47 +8,47 @@ module "components" {
 variable "components" {
   default = {
     frontend = {
-      name        = "01.frontend"
+      name        = "frontend"
       vm_size     = "Standard_D2s_v3"
     }
     mongodb = {
-      name        = "02.mongodb"
+      name        = "mongodb"
       vm_size     = "Standard_D2s_v3"
     }
     catalogue = {
-      name        = "03.catalogue"
+      name        = "catalogue"
       vm_size     = "Standard_D2s_v3"
     }
     user = {
-      name        = "05.user"
+      name        = "user"
       vm_size     = "Standard_D2s_v3"
     }
     cart = {
-      name        = "06.cart"
+      name        = "cart"
       vm_size     = "Standard_D2s_v3"
     }
     mysql = {
-      name        = "07.mysql"
+      name        = "mysql"
       vm_size     = "Standard_D2s_v3"
     }
     shipping = {
-      name        = "08.shipping"
+      name        = "shipping"
       vm_size     = "Standard_D2s_v3"
     }
     payment = {
-      name        = "10.payment"
+      name        = "payment"
       vm_size     = "Standard_D2s_v3"
     }
     rabbitmq = {
-      name        = "09.rabbitmq"
+      name        = "rabbitmq"
       vm_size     = "Standard_D2s_v3"
     }
     redis = {
-      name        = "04.redis"
+      name        = "redis"
       vm_size     = "Standard_D2s_v3"
     }
     dispatch = {
-      name        = "11.dispatch"
+      name        = "dispatch"
       vm_size     = "Standard_D2s_v3"
     }
   }
