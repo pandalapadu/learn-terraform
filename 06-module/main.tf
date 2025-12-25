@@ -1,6 +1,9 @@
 module "samplefile" {
   source = "./sample"
-  x=10
-  y=20
-  z=30
+  x=var.x
+  y=var.y
+  z=var.z
 }
+variable "x" {}
+variable "y" {}
+variable "z" {}
