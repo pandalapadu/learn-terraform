@@ -5,9 +5,10 @@ resource "local_file" "foo" {
 }
 
 variable "demo" {
-  default = [
+  type = map(string)
+  default = {
     ORANGE = "orange",
     BANANA = "banana"
 
-  ]
+  }
 }
