@@ -27,6 +27,7 @@ resource "local_file" "testing" {
 }
 variable "demo" {
   default = [
+    "Mango",
     "orange",
     "apple",
     "banan"
