@@ -41,7 +41,13 @@ output "output_4" {
   value = var.map_variable
 }
 ##so far we have hard coded all the variables
+#we are passing variables from terraform.tfvars files
 variable "v10" {}
 output "o10" {
   value = var.v10
+}
+#We also pass variables from other tfvars variable as well , here using dev.tfvars for input
+variable "v11" {}
+output "o11" {
+  value = var.v11
 }
