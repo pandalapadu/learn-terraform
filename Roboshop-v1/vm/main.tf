@@ -32,7 +32,7 @@ resource "azurerm_virtual_machine" "main" {
   # delete_data_disks_on_termination = true
 
   storage_image_reference {
-    source_image_id   = "/CommunityGalleries/LDOTrail-a8215d2e-c9a8-43ef-904d-c8b1ffb29cf7/Images/rhel9-devops-practice/Versions/latest"
+    source_image_id   = "/subscriptions/7b6c642c-6e46-418f-b715-e01b2f871413/resourceGroups/eCommerce/providers/Microsoft.Compute/images/rhel9-devops-practice-image"
   }
   storage_os_disk {
     name              = var.component
