@@ -43,5 +43,9 @@ variable "components" {
       name        = "rabbitmq"
       vm_size     = "Standard_D2s_v3"
     }
+    redis = {
+      name        = "redis"
+      vm_size     = "Standard_D2s_v3"
+    }
   }
 }
