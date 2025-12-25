@@ -11,5 +11,11 @@ provider "azurerm" {
   subscription_id = "af504235-2f6d-4469-aa25-251f498730fc"
 }
 resource "null_resource" "demo" {
-  count = 10
+  count = length(var.demo)
+}
+resource "null_resource" "demo" {
+  default = [
+    "apple",
+    "banan"
+    ]
 }
