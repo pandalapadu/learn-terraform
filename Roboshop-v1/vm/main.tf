@@ -103,7 +103,7 @@ resource "null_resource" "install_tools" {
       "sudo dnf install -y git",
       "sudo dnf install -y https://rpm.releases.hashicorp.com/RHEL/9/x86_64/stable/terraform-1.8.5-1.x86_64.rpm",
       "sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc && sudo dnf install -y https://packages.microsoft.com/config/rhel/9.0/packages-microsoft-prod.rpm && sudo dnf install -y azure-cli",
-      "sudo dnf module enable -y python:3.12 && sudo dnf install -y python3.12 python3.12-pip && sudo pip3.12 install ansible"
+      "sudo dnf install -y python3.12 python3.12-pip && sudo pip3.12 install ansible"
     ]
 
     connection {
