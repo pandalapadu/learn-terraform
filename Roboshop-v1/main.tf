@@ -23,10 +23,10 @@ variable "components" {
       name        = "user"
       vm_size     = "Standard_D2s_v3"
     }
-    # cart = {
-    #   name        = "cart"
-    #   vm_size     = "Standard_D2s_v3"
-    # }
+    cart = {
+      name        = "cart"
+      vm_size     = "Standard_D2s_v3"
+    }
     # mysql = {
     #   name        = "mysql"
     #   vm_size     = "Standard_D2s_v3"
