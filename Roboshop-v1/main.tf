@@ -15,10 +15,10 @@ variable "components" {
       name        = "mongodb"
       vm_size     = "Standard_D2s_v3"
     }
-    # catalogue = {
-    #   name        = "catalogue"
-    #   vm_size     = "Standard_D2s_v3"
-    # }
+    catalogue = {
+      name        = "catalogue"
+      vm_size     = "Standard_D2s_v3"
+    }
     # user = {
     #   name        = "user"
     #   vm_size     = "Standard_D2s_v3"
