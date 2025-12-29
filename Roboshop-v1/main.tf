@@ -11,10 +11,10 @@ variable "components" {
       name        = "frontend"
       vm_size     = "Standard_D2s_v3"
     }
-    # mongodb = {
-    #   name        = "mongodb"
-    #   vm_size     = "Standard_D2s_v3"
-    # }
+    mongodb = {
+      name        = "mongodb"
+      vm_size     = "Standard_D2s_v3"
+    }
     # catalogue = {
     #   name        = "catalogue"
     #   vm_size     = "Standard_D2s_v3"
