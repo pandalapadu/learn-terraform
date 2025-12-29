@@ -19,22 +19,22 @@ variable "components" {
     #   name        = "catalogue"
     #   vm_size     = "Standard_D2s_v3"
     # }
-    user = {
-      name        = "user"
-      vm_size     = "Standard_D2s_v3"
-    }
-    cart = {
-      name        = "cart"
-      vm_size     = "Standard_D2s_v3"
-    }
-    # mysql = {
-    #   name        = "mysql"
+    # user = {
+    #   name        = "user"
     #   vm_size     = "Standard_D2s_v3"
     # }
-    # shipping = {
-    #   name        = "shipping"
+    # cart = {
+    #   name        = "cart"
     #   vm_size     = "Standard_D2s_v3"
     # }
+    mysql = {
+      name        = "mysql"
+      vm_size     = "Standard_D2s_v3"
+    }
+    shipping = {
+      name        = "shipping"
+      vm_size     = "Standard_D2s_v3"
+    }
     # payment = {
     #   name        = "payment"
     #   vm_size     = "Standard_D2s_v3"
