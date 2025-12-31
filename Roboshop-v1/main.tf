@@ -27,22 +27,22 @@ variable "components" {
     #   name        = "cart"
     #   vm_size     = "Standard_D2s_v3"
     # }
-    mysql = {
-      name        = "mysql"
-      vm_size     = "Standard_D2s_v3"
-    }
-    shipping = {
-      name        = "shipping"
-      vm_size     = "Standard_D2s_v3"
-    }
-    # payment = {
-    #   name        = "payment"
+    # mysql = {
+    #   name        = "mysql"
     #   vm_size     = "Standard_D2s_v3"
     # }
-    # rabbitmq = {
-    #   name        = "rabbitmq"
+    # shipping = {
+    #   name        = "shipping"
     #   vm_size     = "Standard_D2s_v3"
     # }
+    payment = {
+      name        = "payment"
+      vm_size     = "Standard_D2s_v3"
+    }
+    rabbitmq = {
+      name        = "rabbitmq"
+      vm_size     = "Standard_D2s_v3"
+    }
     # redis = {
     #   name        = "redis"
     #   vm_size     = "Standard_D2s_v3"
