@@ -32,7 +32,7 @@ variable "components" {
       vm_size     = "Standard_D2s_v3"
     }
     shipping = {
-      name        = "shippingg"
+      name        = "shipping"
       vm_size     = "Standard_D2s_v3"
     }
     # payment = {
