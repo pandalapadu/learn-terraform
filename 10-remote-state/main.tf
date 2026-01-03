@@ -6,3 +6,7 @@ terraform {
     key = "dev.tfstate"
   }
 }
+
+output "testing" {
+  value = "hello value inside backend"
+}
