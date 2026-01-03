@@ -98,6 +98,7 @@ resource "azurerm_virtual_machine" "main" {
 }
 
 resource "null_resource" "install_tools" {
+  depends_on = [azurerm_virtual_machine.main]
   provisioner "remote-exec" {
     inline = [
       "sudo dnf install -y git",
