@@ -18,8 +18,10 @@ variable "token" {
   sensitive   = true
 }
 
+# Read secret from Vault KV v2
 data "vault_kv_secret_v2" "ssh_secret" {
-  path = "demo-ssh/venkat"
+  mount = "demo-ssh"  # KV engine mount path
+  name  = "venkat"     # Secret key name
 }
 
 output "ssh_password" {
